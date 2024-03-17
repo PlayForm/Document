@@ -1,0 +1,57 @@
+{
+	"name": "typescript-document",
+	"version": "0.0.1",
+	"private": false,
+	"description": "📃 TypeDoc Wrapper.",
+	"keywords": [
+		"documentation",
+		"javascript",
+		"typedoc",
+		"typescript"
+	],
+	"homepage": "https://github.com/Playform/TypeScriptDocument#readme",
+	"bugs": {
+		"url": "https://github.com/Playform/TypeScriptDocument/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Playform/TypeScriptDocument.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "./Target/Class/TypeScriptDocument.js",
+	"types": "./Target/Class/TypeScriptDocument.d.ts",
+	"bin": {
+		"TypeScriptDocument": "Target/Class/TypeScriptDocument.js"
+	},
+	"scripts": {
+		"prepublishOnly": "node --no-warnings --loader ts-node/esm Source/Class/TypeScriptDocument.ts 'Source/**/*.ts'"
+	},
+	"dependencies": {
+		"@types/node": "20.11.28",
+		"commander": "12.0.0",
+		"deepmerge-ts": "5.1.0",
+		"esbuild": "0.20.2",
+		"esbuild-plugin-copy": "2.1.1",
+		"fast-glob": "3.3.2",
+		"typedoc": "0.25.12",
+		"typedoc-plugin-keywords": "1.6.0",
+		"typedoc-plugin-mdn-links": "3.1.18",
+		"typedoc-plugin-merge-modules": "5.1.0",
+		"typedoc-plugin-remove-references": "0.0.6",
+		"typedoc-plugin-rename-defaults": "0.7.0",
+		"typedoc-plugin-zod": "1.1.2",
+		"typescript": "5.4.2"
+	},
+	"devDependencies": {
+		"ts-node": "10.9.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
