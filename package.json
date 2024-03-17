@@ -30,7 +30,7 @@
 		"TypeScriptDocument": "Target/Class/TypeScriptDocument.js"
 	},
 	"scripts": {
-		"prepublishOnly": "node --no-warnings --loader ts-node/esm Source/Class/TypeScriptDocument.ts 'Source/**/*.ts'"
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"@types/node": "20.11.28",
@@ -45,11 +45,10 @@
 		"typedoc-plugin-merge-modules": "5.1.0",
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.0",
-		"typedoc-plugin-zod": "1.1.2",
-		"typescript": "5.4.2"
+		"typedoc-plugin-zod": "1.1.2"
 	},
 	"devDependencies": {
-		"ts-node": "10.9.2"
+		"typescript-esbuild": "0.0.1"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -33,10 +33,6 @@ export default {
 			resolveFrom: "out",
 			assets: [
 				{
-					from: "./Source/Notation/TypeScript.json",
-					to: "./Notation/",
-				},
-				{
 					from: "./Source/Stylesheet/Theme.css",
 					to: "./Stylesheet/",
 				},

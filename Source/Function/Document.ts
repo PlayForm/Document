@@ -2,7 +2,7 @@
  * @module Document
  *
  */
-export default (async (...[File, Option]: Parameters<Type>) => {
+export default (async (...[File]: Parameters<Type>) => {
 	for (const _File of File) {
 		for (const __File of await (await import("fast-glob")).default(
 			_File.replaceAll("'", "").replaceAll('"', ""),
@@ -12,45 +12,6 @@ export default (async (...[File, Option]: Parameters<Type>) => {
 	}
 
 	Pipe.reverse();
-
-	const Configuration = Merge(
-		(await import("../Variable/ESBuild.js")).default,
-		{
-			entryPoints: Object.fromEntries(
-				Pipe.map((File) => [
-					File.replace("Source/", "")
-						.split(".")
-						.slice(0, -1.0)
-						.join("."),
-					File,
-				]),
-			),
-		},
-	);
-
-	console.log(
-		await (await import("esbuild")).analyzeMetafile(
-			(
-				await (
-					await import("esbuild")
-				).build(
-					Option?.ESBuild
-						? Merge(
-								Configuration,
-								await (
-									await import("../Function/File.js")
-								).default(Option.ESBuild),
-						  )
-						: Configuration,
-				)
-			)?.metafile ?? "",
-			{
-				verbose: true,
-			},
-		),
-	);
-
-	Exec(`tsc -p ${Option?.TypeScript ?? "tsconfig.json"}`);
 
 	Exec(
 		[
@@ -79,7 +40,15 @@ export default (async (...[File, Option]: Parameters<Type>) => {
 			"--entryPointStrategy expand",
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",
-			`--entryPoints ${Object.values(Configuration.entryPoints).join(
+			`--entryPoints ${Object.values(Object.fromEntries(
+				Pipe.map((File) => [
+					File.replace("Source/", "")
+						.split(".")
+						.slice(0, -1.0)
+						.join("."),
+					File,
+				]),
+			)).join(
 				" --entryPoints ",
 			)}`,
 		].join(" "),

@@ -44,30 +44,37 @@ export default class
 
 	Mapping: Mapping[] = [
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [Class],
 			Directory: "Class",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [Interface],
 			Directory: "Interface",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [Enum],
 			Directory: "Enum",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [Namespace, Module],
 			Directory: "Module",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [TypeAlias],
 			Directory: "Type",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [_Function],
 			Directory: "Function",
 		},
 		{
+			// biome-ignore lint/correctness/noInvalidUseBeforeDeclaration:
 			Kind: [Variable],
 			Directory: "Variable",
 		},
