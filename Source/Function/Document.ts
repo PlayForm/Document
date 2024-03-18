@@ -52,8 +52,6 @@ import type Type from "../Interface/Build.js";
 
 export const { default: Exec } = await import("../Function/Exec.js");
 
-export const { default: Merge } = await import("../Function/Merge.js");
-
 export const { resolve } = await import("path");
 
 export const Pipe: string[] = [];
