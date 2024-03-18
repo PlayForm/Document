@@ -40,17 +40,10 @@ export default (async (...[File]: Parameters<Type>) => {
 			"--entryPointStrategy expand",
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",
-			`--entryPoints ${Object.values(Object.fromEntries(
-				Pipe.map((File) => [
-					File.replace("Source/", "")
-						.split(".")
-						.slice(0, -1.0)
-						.join("."),
-					File,
-				]),
-			)).join(
-				" --entryPoints ",
-			)}`,
+			`--entryPoints ${Pipe.map((File) => [
+				File.replace("Source/", "").split(".").slice(0, -1.0).join("."),
+				File,
+			]).join(" --entryPoints ")}`,
 		].join(" "),
 	);
 }) satisfies Type as Type;
