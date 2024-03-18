@@ -48,7 +48,7 @@
 		"typedoc-plugin-zod": "1.1.2"
 	},
 	"devDependencies": {
-		"typescript-esbuild": "0.0.1"
+		"typescript-esbuild": "0.4.1"
 	},
 	"publishConfig": {
 		"access": "public"
