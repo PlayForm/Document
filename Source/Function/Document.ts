@@ -13,6 +13,8 @@ export default (async (...[File]: Parameters<Type>) => {
 
 	Pipe.reverse();
 
+	console.log(Pipe);
+
 	Exec(
 		[
 			"typedoc",
