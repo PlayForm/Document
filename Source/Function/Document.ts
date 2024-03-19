@@ -15,21 +15,33 @@ export default (async (...[File]: Parameters<Type>) => {
 
 	console.log(Pipe);
 
-	Exec(
+	console.log(
 		[
 			"typedoc",
 			"--commentStyle all",
-			"--gitRevision main",
+			// "--gitRevision Current",
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",
 			`--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
-			"--plugin typedoc-plugin-remove-references",
-			"--plugin typedoc-plugin-rename-defaults",
-			"--plugin typedoc-plugin-mdn-links",
-			"--plugin typedoc-plugin-zod",
-			"--plugin typedoc-plugin-merge-modules",
-			"--plugin typedoc-plugin-keywords",
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-remove-references/dist/index.js`,
+			)}`,
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-rename-defaults/index.js`,
+			)}`,
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-mdn-links/dist/index.js`,
+			)}`,
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-zod/dist/plugin.js`,
+			)}`,
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-merge-modules/dist/index.js`,
+			)}`,
+			`--plugin ${resolve(
+				`${Current}/../../node_modules/typedoc-plugin-keywords/index.js`,
+			)}`,
 			"--searchInComments",
 			`--keywords ${
 				(
