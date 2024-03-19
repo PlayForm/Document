@@ -1,6 +1,6 @@
 {
 	"name": "typescript-document",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": false,
 	"description": "📃 TypeDoc Wrapper.",
 	"keywords": [
@@ -30,6 +30,7 @@
 		"TypeScriptDocument": "Target/Class/TypeScriptDocument.js"
 	},
 	"scripts": {
+		"Document": "TypeScriptDocument 'Source/**/*.ts'",
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -ES Configuration/ESBuild.ts"
 	},
 	"dependencies": {
@@ -45,7 +46,7 @@
 	},
 	"devDependencies": {
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-esbuild": "0.4.3"
+		"typescript-esbuild": "0.4.4"
 	},
 	"publishConfig": {
 		"access": "public"

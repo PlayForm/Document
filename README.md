@@ -17,7 +17,7 @@ npm install -D -E typescript-document
 ```json
 {
 	"scripts": {
-		"prepublishOnly": "TypeScriptDocument 'Source/**/*.ts'"
+		"Document": "TypeScriptDocument 'Source/**/*.ts'"
 	}
 }
 ```
