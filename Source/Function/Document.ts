@@ -13,11 +13,11 @@ export default (async (...[File]: Parameters<Type>) => {
 
 	Pipe.reverse();
 
-	Exec(
+	console.log(
 		[
 			"typedoc",
 			"--commentStyle all",
-			// "--gitRevision Current",
+			"--gitRevision Current",
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",
