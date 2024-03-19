@@ -20,7 +20,8 @@ export default (async (...[File]: Parameters<Type>) => {
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",
-			`--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
+			// TODO: FI
+			// `--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 			`--plugin ${resolve(
 				`${Current}/../../node_modules/typedoc-plugin-remove-references/dist/index.js`,
 			)}`,
@@ -47,7 +48,8 @@ export default (async (...[File]: Parameters<Type>) => {
 					).default("package.json", process.cwd())
 				)?.keywords?.join(" --keywords ") ?? " typescript-document "
 			}`,
-			"--theme TypeScriptDocument",
+			// TODO: FIX THIS
+			// "--theme TypeScriptDocument",
 			"--entryPointStrategy expand",
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",
