@@ -3,6 +3,7 @@
 \typedoc \
 	--commentStyle all \
 	--gitRevision Current \
+	--logLevel Verbose \
 	--customCss /d/Developer/Application/Playform/NPM/TypeScriptDocument/Target/Stylesheet/Theme.css \
 	--includeVersion \
 	--out ./Documentation \

@@ -13,7 +13,7 @@ export default (async (...[File]: Parameters<Type>) => {
 
 	Pipe.reverse();
 
-	console.log(
+	Exec(
 		[
 			"typedoc",
 			"--commentStyle all",
