@@ -13,13 +13,11 @@ export default (async (...[File]: Parameters<Type>) => {
 
 	Pipe.reverse();
 
-	console.log(Pipe);
-
-	console.log(
+	Exec(
 		[
 			"typedoc",
 			"--commentStyle all",
-			// "--gitRevision Current",
+			"--gitRevision Current",
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",
@@ -54,10 +52,7 @@ export default (async (...[File]: Parameters<Type>) => {
 			"--entryPointStrategy expand",
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",
-			`--entryPoints ${Pipe.map((File) => [
-				File.replace("Source/", "").split(".").slice(0, -1.0).join("."),
-				File,
-			]).join(" --entryPoints ")}`,
+			`--entryPoints ${Pipe.join(" --entryPoints ")}`,
 		].join(" "),
 	);
 }) satisfies Type as Type;

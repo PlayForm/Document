@@ -6,7 +6,6 @@
 	"keywords": [
 		"documentation",
 		"javascript",
-		"typedoc",
 		"typescript"
 	],
 	"homepage": "https://github.com/Playform/TypeScriptDocument#readme",
@@ -30,7 +29,7 @@
 		"TypeScriptDocument": "Target/Class/TypeScriptDocument.js"
 	},
 	"scripts": {
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -ES Configuration/ESBuild.ts"
 	},
 	"dependencies": {
 		"commander": "12.0.0",
@@ -44,6 +43,7 @@
 		"typedoc-plugin-zod": "1.1.2"
 	},
 	"devDependencies": {
+		"esbuild-plugin-copy": "2.1.1",
 		"typescript-esbuild": "0.4.2"
 	},
 	"publishConfig": {
