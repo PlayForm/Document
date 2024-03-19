@@ -17,7 +17,6 @@ export default (async (...[File]: Parameters<Type>) => {
 		[
 			"typedoc",
 			"--commentStyle all",
-			"--gitRevision Current",
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",

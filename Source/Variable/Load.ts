@@ -2,8 +2,9 @@
  * @module Load
  *
  */
-export const load = (...[Application]: Parameters<Type["load"]>) =>
+export const load = (...[Application]: Parameters<Type["load"]>) => {
 	Application.renderer.defineTheme("TypeScriptDocument", Theme);
+};
 
 export default {
 	load,

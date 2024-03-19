@@ -1,14 +1,14 @@
 /**
  * @module Mapping
  *
- * Defines a mapping of a {@link Models.Kind} to a template file.
+ * Defines a mapping of a Models to a template file.
  *
- * Used by {@link DefaultTheme} to map reflections to output files.
+ * Used by DefaultTheme to map reflections to output files.
  *
  */
 export default interface Type {
     /**
-     * {@link DeclarationReflection.kind} this rule applies to.
+     * DeclarationReflection.kind this rule applies to.
      */
     Kind: ReflectionKind[];
     /**
