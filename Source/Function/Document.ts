@@ -20,7 +20,7 @@ export default (async (...[File]: Parameters<Type>) => {
 			`--customCss ${resolve(`${Current}/../Stylesheet/Theme.css`)}`,
 			"--includeVersion",
 			"--out ./Documentation",
-			// TODO: FI
+			// TODO: FIX THIS
 			// `--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 			`--plugin ${resolve(
 				`${Current}/../../node_modules/typedoc-plugin-remove-references/dist/index.js`,
