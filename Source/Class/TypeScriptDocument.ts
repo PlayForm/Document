@@ -11,4 +11,3 @@ export default new (await import("commander")).Command()
 	.argument("<File...>", "Document File.")
 	.action((await import("../Function/Document.js")).default)
 	.parse();
-	
