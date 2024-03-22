@@ -1,6 +1,6 @@
 {
 	"name": "typescript-document",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"private": false,
 	"description": "📃 TypeDoc Wrapper.",
 	"keywords": [
@@ -52,6 +52,6 @@
 		"access": "public"
 	},
 	"peerDependencies": {
-		"typescript-document": "0.0.4"
+		"typescript-document": "0.0.5"
 	}
 }
