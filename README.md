@@ -22,5 +22,5 @@ npm install -D -E typescript-document
 }
 ```
 
-[typedoc]: HTTPS://NPMJS.Org/typedoc
-[TypeScriptDocument]: HTTPS://NPMJS.Org/typescript-document
+[typedoc]: https://NPMJS.Org/typedoc
+[TypeScriptDocument]: https://NPMJS.Org/typescript-document
