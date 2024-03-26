@@ -1,6 +1,6 @@
 {
 	"name": "typescript-document",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"private": false,
 	"description": "📃 TypeDoc Wrapper.",
 	"keywords": [
@@ -46,12 +46,12 @@
 	},
 	"devDependencies": {
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-esbuild": "0.4.5"
+		"typescript-esbuild": "0.4.6"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
-	"peerDependencies": {
-		"typescript-document": "0.0.5"
+	"optionalDependencies": {
+		"typescript-document": "0.0.6"
 	}
 }
