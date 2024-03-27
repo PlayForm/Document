@@ -2,7 +2,7 @@
 	"name": "typescript-document",
 	"version": "0.0.6",
 	"private": false,
-	"description": "📃 TypeDoc Wrapper.",
+	"description": "📃  TypeDoc Wrapper.",
 	"keywords": ["documentation", "javascript", "typedoc", "typescript"],
 	"homepage": "https://github.com/Playform/TypeScriptDocument#readme",
 	"bugs": {
