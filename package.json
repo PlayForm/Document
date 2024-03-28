@@ -1,6 +1,6 @@
 {
 	"name": "typescript-document",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": false,
 	"description": "📃 TypeDoc Wrapper.",
 	"keywords": ["documentation", "javascript", "typedoc", "typescript"],
@@ -15,7 +15,7 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
+		"email": "hello@playform.cloud",
 		"url": "https://playform.cloud"
 	},
 	"type": "module",
@@ -41,10 +41,10 @@
 	},
 	"devDependencies": {
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-esbuild": "0.4.8"
+		"typescript-esbuild": "0.4.9"
 	},
 	"peerDependencies": {
-		"typescript-document": "0.0.6"
+		"typescript-document": "0.0.7"
 	},
 	"publishConfig": {
 		"access": "public"
