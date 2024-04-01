@@ -34,7 +34,7 @@ export default (async (...[File]: Parameters<Type>) => {
 					await (
 						await import("../Function/JSON.js")
 					).default("package.json", process.cwd())
-				)?.keywords?.join(" --keywords ") ?? " typescript-document "
+				)?.keywords?.join(" --keywords ") ?? " @playform/document "
 			}`,
 			// TODO: FIX THIS
 			// "--theme TypeScriptDocument",

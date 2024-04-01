@@ -7,7 +7,7 @@ Document all your TypeScript files using TypeDoc.
 Add configuration and setup scripts:
 
 ```sh
-npm install -D -E typescript-document
+npm install -D -E @playform/document
 ```
 
 ## Usage
@@ -23,4 +23,4 @@ npm install -D -E typescript-document
 ```
 
 [typedoc]: https://npmjs.org/typedoc
-[TypeScriptDocument]: https://npmjs.org/typescript-document
+[TypeScriptDocument]: https://npmjs.org/@playform/document
