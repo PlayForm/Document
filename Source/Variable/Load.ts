@@ -3,7 +3,7 @@
  *
  */
 export const load = (...[Application]: Parameters<Type["load"]>) =>
-	Application.renderer.defineTheme("TypeScriptDocument", Theme);
+	Application.renderer.defineTheme("Document", Theme);
 
 export default {
 	load,

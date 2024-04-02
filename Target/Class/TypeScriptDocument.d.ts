@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @module TypeScriptDocument
+ * @module Document
  *
  */
 declare const _default: import("commander").Command;

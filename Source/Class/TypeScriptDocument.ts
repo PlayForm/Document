@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * @module TypeScriptDocument
+ * @module Document
  *
  */
 export default new (await import("commander")).Command()
-	.name("TypeScriptDocument")
+	.name("Document")
 	.version(process.env["VERSION_PACKAGE"] ?? "0.0.1")
 	.description("📃 Document TypeScript.")
 	.argument("<File...>", "Document File.")

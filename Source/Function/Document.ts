@@ -37,7 +37,7 @@ export default (async (...[File]: Parameters<Type>) => {
 				)?.keywords?.join(" --keywords ") ?? " @playform/document "
 			}`,
 			// TODO: FIX THIS
-			// "--theme TypeScriptDocument",
+			// "--theme Document",
 			"--entryPointStrategy expand",
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",

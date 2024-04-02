@@ -24,14 +24,14 @@
 		"url": "https://playform.cloud"
 	},
 	"type": "module",
-	"main": "./Target/Class/TypeScriptDocument.js",
-	"types": "./Target/Class/TypeScriptDocument.d.ts",
+	"main": "./Target/Class/Document.js",
+	"types": "./Target/Class/Document.d.ts",
 	"bin": {
-		"TypeScriptDocument": "Target/Class/TypeScriptDocument.js"
+		"Document": "Target/Class/Document.js"
 	},
 	"scripts": {
-		"Document": "node --no-warnings --loader ts-node/esm Source/Class/TypeScriptDocument.ts 'Source/**/*.ts'",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -ES Configuration/ESBuild.ts"
+		"Document": "node --no-warnings --loader ts-node/esm Source/Class/Document.ts 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts' -ES Configuration/ESBuild.ts"
 	},
 	"dependencies": {
 		"commander": "12.0.0",
@@ -46,7 +46,7 @@
 	},
 	"devDependencies": {
 		"ts-node": "10.9.2",
-		"@playform/build": "0.0.1",
+		"@playform/build": "0.0.2",
 		"esbuild-plugin-copy": "2.1.1"
 	},
 	"publishConfig": {
