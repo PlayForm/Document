@@ -3,7 +3,12 @@
 	"version": "0.0.2",
 	"private": false,
 	"description": "📃 TypeDoc Wrapper.",
-	"keywords": ["documentation", "javascript", "typedoc", "typescript"],
+	"keywords": [
+		"documentation",
+		"javascript",
+		"typedoc",
+		"typescript"
+	],
 	"homepage": "https://github.com/Playform/Document#ReadMe",
 	"bugs": {
 		"url": "https://github.com/Playform/Document/issues"
@@ -40,8 +45,8 @@
 		"typedoc-plugin-zod": "1.1.2"
 	},
 	"devDependencies": {
-		"esbuild-plugin-copy": "2.1.1",
-		"@playform/build": "0.0.1"
+		"@playform/build": "0.0.1",
+		"esbuild-plugin-copy": "2.1.1"
 	},
 	"publishConfig": {
 		"access": "public"
