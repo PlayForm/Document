@@ -2,7 +2,7 @@
 	"name": "@playform/document",
 	"version": "0.0.2",
 	"private": false,
-	"description": "📃 TypeDoc Wrapper.",
+	"description": "📃 Document.",
 	"keywords": [
 		"documentation",
 		"javascript",
@@ -31,7 +31,7 @@
 	},
 	"scripts": {
 		"Document": "node --no-warnings --loader ts-node/esm Source/Class/Document.ts 'Source/**/*.ts'",
-		"prepublishOnly": "Build 'Source/**/*.ts' -ES Configuration/ESBuild.ts"
+		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts"
 	},
 	"dependencies": {
 		"commander": "12.0.0",
@@ -47,7 +47,7 @@
 	"devDependencies": {
 		"ts-node": "10.9.2",
 		"@playform/build": "0.0.2",
-		"esbuild-plugin-copy": "2.1.1"
+		"@playform/copy": "2.1.1"
 	},
 	"publishConfig": {
 		"access": "public"
