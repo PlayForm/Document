@@ -30,7 +30,7 @@
 		"Document": "Target/Class/Document.js"
 	},
 	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
+		"Document": "node --no-warnings --loader ts-node/esm Source/Class/Document.ts 'Source/**/*.ts'",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
@@ -45,7 +45,8 @@
 		"typedoc-plugin-zod": "1.1.2"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.2"
+		"@playform/build": "0.0.2",
+		"ts-node": "10.9.2"
 	},
 	"publishConfig": {
 		"access": "public"
