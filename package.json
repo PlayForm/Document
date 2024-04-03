@@ -46,8 +46,10 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.2",
-		"@playform/copy": "2.1.1",
 		"ts-node": "10.9.2"
+	},
+	"peerDependencies": {
+		"@playform/copy": "0.0.1"
 	},
 	"publishConfig": {
 		"access": "public"
