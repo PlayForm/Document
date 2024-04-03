@@ -6,7 +6,7 @@
  * Used by DefaultTheme to map reflections to output files.
  *
  */
-export default interface Type {
+export default interface Interface {
     /**
      * DeclarationReflection.kind this rule applies to.
      */

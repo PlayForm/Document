@@ -2,7 +2,7 @@
  * @module Load
  *
  */
-export default interface Type {
+export default interface Interface {
     /**
      * The `Load` function is responsible for loading a plugin into the TypeDoc instance.
      *
