@@ -17,7 +17,9 @@ export default (async (...[File]: Parameters<Type>) => {
 		[
 			"typedoc",
 			"--commentStyle all",
-			`--customCss ${resolve(`${Current}/../../Stylesheet/Theme.css`)}`,
+			`--customCss ${(await import("path")).resolve(
+				`${Current}/../../Stylesheet/Theme.css`
+			)}`,
 			"--includeVersion",
 			"--out ./Documentation",
 			// TODO: FIX THIS
