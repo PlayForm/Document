@@ -31,7 +31,7 @@
 	},
 	"scripts": {
 		"Document": "node --no-warnings --loader ts-node/esm Source/Class/Document.ts 'Source/**/*.ts'",
-		"Build": "Build 'Source/**/*.ts'"
+		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"commander": "12.0.0",
