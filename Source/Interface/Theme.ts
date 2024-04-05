@@ -3,7 +3,7 @@
  *
  * Represents an interface for defining a theme with various methods and properties.
  */
-export default interface Type extends DefaultTheme {
+export default interface Interface extends DefaultTheme {
 	/**
 	 * A function that builds URLs for a given DeclarationReflection and an array of URLs mappings.
 	 *
