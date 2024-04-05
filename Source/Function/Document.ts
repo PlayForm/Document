@@ -2,7 +2,7 @@
  * @module Document
  *
  */
-export default (async (...[File]: Parameters<Type>) => {
+export default (async (...[File]: Parameters<Interface>) => {
 	for (const _File of File) {
 		for (const __File of await (
 			await import("fast-glob")
@@ -34,7 +34,7 @@ export default (async (...[File]: Parameters<Type>) => {
 			`--keywords ${
 				(
 					await (
-						await import("../Function/JSON.js")
+						await import("@Function/JSON.js")
 					).default("package.json", process.cwd())
 				)?.keywords?.join(" --keywords ") ?? " @playform/document "
 			}`,
@@ -46,11 +46,11 @@ export default (async (...[File]: Parameters<Type>) => {
 			`--entryPoints ${Pipe.join(" --entryPoints ")}`,
 		].join(" ")
 	);
-}) satisfies Type as Type;
+}) satisfies Interface as Interface;
 
-import type Type from "../Interface/Build.js";
+import type Interface from "@Interface/Document.js";
 
-export const { default: Exec } = await import("../Function/Exec.js");
+export const { default: Exec } = await import("@Function/Exec.js");
 
 export const { resolve } = await import("path");
 

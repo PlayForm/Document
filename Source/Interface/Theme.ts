@@ -15,7 +15,7 @@ export default interface Type extends DefaultTheme {
 	buildUrls: (
 		Reflection: DeclarationReflection,
 		// biome-ignore lint/suspicious/noExplicitAny:
-		URLs: UrlMapping<any>[],
+		URLs: UrlMapping<any>[]
 		// biome-ignore lint/suspicious/noExplicitAny:
 	) => UrlMapping<any>[];
 
@@ -33,6 +33,6 @@ export default interface Type extends DefaultTheme {
 	Mapping: Mapping[];
 }
 
-import type Mapping from "./Mapping.js";
+import type Mapping from "@Interface/Mapping.js";
 
 import type { DeclarationReflection, DefaultTheme, UrlMapping } from "typedoc";

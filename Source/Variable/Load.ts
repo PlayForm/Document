@@ -9,6 +9,6 @@ export default {
 	load,
 } satisfies Type as Type;
 
-import type Type from "../Interface/Load.js";
+import type Type from "@Interface/Load.js";
 
-export const { default: Theme } = await import("../Class/Theme.js");
+export const { default: Theme } = await import("@Class/Theme.js");

@@ -30,7 +30,7 @@
 		"Document": "Target/Class/Document.js"
 	},
 	"scripts": {
-		"Document": "node --no-warnings --loader ts-node/esm Source/Class/Document.ts 'Source/**/*.ts'",
+		"Document": "node ./Target/Class/Document.js 'Source/**/*.ts'",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
