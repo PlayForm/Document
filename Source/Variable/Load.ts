@@ -2,13 +2,13 @@
  * @module Load
  *
  */
-export const load = (...[Application]: Parameters<Type["load"]>) =>
+export const load = (...[Application]: Parameters<Interface["load"]>) =>
 	Application.renderer.defineTheme("Document", Theme);
 
 export default {
 	load,
-} satisfies Type as Type;
+} satisfies Interface as Interface;
 
-import type Type from "@Interface/Load.js";
+import type Interface from "@Interface/Load.js";
 
 export const { default: Theme } = await import("@Class/Theme.js");

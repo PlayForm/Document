@@ -1,1 +1,1 @@
-const t=(...[e])=>e.renderer.defineTheme("Document",a);var o={load:t};const{default:a}=await import("../Class/Theme.js");export{a as Theme,o as default,t as load};
+const t=(...[e])=>e.renderer.defineTheme("Document",a);var r={load:t};const{default:a}=await import("../Class/Theme.js");export{a as Theme,r as default,t as load};
