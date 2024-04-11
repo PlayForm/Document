@@ -1,0 +1,18 @@
+
+> @playform/document@0.0.6 Document D:\Developer\Application\Playform\NPM\Document
+> node ./Target/Class/Document.js 'Source/**/*.ts'
+
+[96m[info][0m Loaded plugin typedoc-plugin-remove-references
+
+[96m[info][0m Loaded plugin typedoc-plugin-rename-defaults
+
+[96m[info][0m Loaded plugin typedoc-plugin-mdn-links
+
+[96m[info][0m Loaded plugin typedoc-plugin-zod
+
+[96m[info][0m Loaded plugin typedoc-plugin-merge-modules
+
+[96m[info][0m Loaded plugin typedoc-plugin-keywords
+
+[96m[info][0m Documentation generated at ./Documentation
+
