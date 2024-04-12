@@ -2,7 +2,7 @@
 	"name": "@playform/document",
 	"version": "0.0.6",
 	"private": false,
-	"description": "📃 Document.",
+	"description": "📃 Document",
 	"keywords": [
 		"documentation",
 		"javascript",
