@@ -48,7 +48,7 @@
 		"ts-node": "10.9.2"
 	},
 	"peerDependencies": {
-		"@playform/build": "0.0.5"
+		"@playform/build": "0.0.7"
 	},
 	"peerDependenciesMeta": {
 		"@playform/build": {
