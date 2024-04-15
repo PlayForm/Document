@@ -23,4 +23,4 @@ npm install -D -E @playform/document
 ```
 
 [typedoc]: https://npmjs.org/typedoc
-[Document]: https://npmjs.org/@playform/document
+[Document.]: https://npmjs.org/@playform/document
