@@ -1,4 +1,4 @@
-# 📃 [Document —]
+# 📃 [Document] —
 
 Document all your TypeScript files using TypeDoc.
 
@@ -23,4 +23,4 @@ npm install -D -E @playform/document
 ```
 
 [typedoc]: HTTPS://npmjs.org/typedoc
-[Document —]: httpS://npmjs.org/@playform/document
+[Document]: HTTPS://npmjs.org/@playform/document
