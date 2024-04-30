@@ -2,7 +2,7 @@
 	"name": "@playform/document",
 	"version": "0.0.6",
 	"private": false,
-	"description": "📃 Document —",
+	"description": "📃 — Document —",
 	"keywords": [
 		"documentation",
 		"javascript",
@@ -20,7 +20,7 @@
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "⛲ Source ⁄ 🚪 Open —",
+		"name": "⛲ Source ⁄ 🚪 — Open —",
 		"email": "Source/Open@PlayForm.Cloud",
 		"url": "HTTPS://PlayForm.Cloud"
 	},
