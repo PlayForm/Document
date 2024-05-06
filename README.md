@@ -1,4 +1,4 @@
-# 📃 — [Document] —
+# 📃 [Document] —
 
 Document all your TypeScript files using TypeDoc.
 
