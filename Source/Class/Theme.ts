@@ -72,8 +72,8 @@ export default class extends DefaultTheme {
 	// ];
 }
 
-// import type Mapping from "@Interface/Mapping.js";
-// import type Type from "@Interface/Theme.js";
+// import type Mapping from "../Interface/Mapping.js";
+// import type Type from "../Interface/Theme.js";
 
 // export const {
 // 	DeclarationReflection,

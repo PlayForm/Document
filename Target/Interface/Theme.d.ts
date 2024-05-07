@@ -25,5 +25,5 @@ export default interface Interface extends DefaultTheme {
      */
     Mapping: Mapping[];
 }
-import type Mapping from "@Interface/Mapping.js";
+import type Mapping from "../Interface/Mapping.js";
 import type { DeclarationReflection, DefaultTheme, UrlMapping } from "typedoc";
