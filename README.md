@@ -22,5 +22,5 @@ npm install -D -E @playform/document
 }
 ```
 
-[typedoc]: HTTPS://npmjs.org/typedoc
-[Document]: HTTPS://npmjs.org/@playform/document
+[typedoc]: HTTPS://NPMJS.Org/typedoc
+[Document]: HTTPS://NPMJS.Org/@playform/document
