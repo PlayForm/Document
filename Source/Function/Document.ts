@@ -16,6 +16,8 @@ export default (async (...[File]: Parameters<Interface>) => {
 	Exec(
 		[
 			"typedoc",
+			// TODO: FIX THIS
+			// "--gitRemote Source",
 			"--commentStyle all",
 			`--customCss ${(await import("path")).resolve(
 				`${Current}/../../Stylesheet/Theme.css`
