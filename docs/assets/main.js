@@ -1,5 +1,3 @@
-"use strict";
-"use strict";
 (() => {
 	var Ce = Object.create;
 	var ne = Object.defineProperty;
@@ -12,7 +10,7 @@
 	);
 	var Fe = (t, e, n, r) => {
 		if ((e && typeof e == "object") || typeof e == "function")
-			for (let i of Oe(e))
+			for (const i of Oe(e))
 				!Re.call(t, i) &&
 					i !== n &&
 					ne(t, i, {
@@ -27,12 +25,12 @@
 			e || !t || !t.__esModule
 				? ne(n, "default", { value: t, enumerable: !0 })
 				: n,
-			t
+			t,
 		)
 	);
 	var ae = Me((se, oe) => {
 		(function () {
-			var t = function (e) {
+			var t = (e) => {
 				var n = new t.Builder();
 				return (
 					n.pipeline.add(t.trimmer, t.stopWordFilter, t.stemmer),
@@ -43,15 +41,11 @@
 			};
 			t.version = "2.3.9";
 			(t.utils = {}),
-				(t.utils.warn = (function (e) {
-					return function (n) {
-						e.console && console.warn && console.warn(n);
-					};
+				(t.utils.warn = ((e) => (n) => {
+					e.console && console.warn && console.warn(n);
 				})(this)),
-				(t.utils.asString = function (e) {
-					return e == null ? "" : e.toString();
-				}),
-				(t.utils.clone = function (e) {
+				(t.utils.asString = (e) => (e == null ? "" : e.toString())),
+				(t.utils.clone = (e) => {
 					if (e == null) return e;
 					for (
 						var n = Object.create(null), r = Object.keys(e), i = 0;
@@ -73,7 +67,7 @@
 							continue;
 						}
 						throw new TypeError(
-							"clone is not deep and does not support nested objects"
+							"clone is not deep and does not support nested objects",
 						);
 					}
 					return n;
@@ -84,7 +78,7 @@
 						(this._stringValue = r);
 				}),
 				(t.FieldRef.joiner = "/"),
-				(t.FieldRef.fromString = function (e) {
+				(t.FieldRef.fromString = (e) => {
 					var n = e.indexOf(t.FieldRef.joiner);
 					if (n === -1) throw "malformed field ref string";
 					var r = e.slice(0, n),
@@ -109,26 +103,18 @@
 				} else this.length = 0;
 			}),
 				(t.Set.complete = {
-					intersect: function (e) {
-						return e;
-					},
+					intersect: (e) => e,
 					union: function () {
 						return this;
 					},
-					contains: function () {
-						return !0;
-					},
+					contains: () => !0,
 				}),
 				(t.Set.empty = {
 					intersect: function () {
 						return this;
 					},
-					union: function (e) {
-						return e;
-					},
-					contains: function () {
-						return !1;
-					},
+					union: (e) => e,
+					contains: () => !1,
 				}),
 				(t.Set.prototype.contains = function (e) {
 					return !!this.elements[e];
@@ -157,11 +143,11 @@
 							? this
 							: new t.Set(
 									Object.keys(this.elements).concat(
-										Object.keys(e.elements)
-									)
+										Object.keys(e.elements),
+									),
 								);
 				}),
-				(t.idf = function (e, n) {
+				(t.idf = (e, n) => {
 					var r = 0;
 					for (var i in e)
 						i != "_index" && (r += Object.keys(e[i]).length);
@@ -179,23 +165,20 @@
 				}),
 				(t.Token.prototype.clone = function (e) {
 					return (
-						(e =
-							e ||
-							function (n) {
-								return n;
-							}),
+						(e = e || ((n) => n)),
 						new t.Token(e(this.str, this.metadata), this.metadata)
 					);
 				});
-			(t.tokenizer = function (e, n) {
+			(t.tokenizer = (e, n) => {
 				if (e == null || e == null) return [];
 				if (Array.isArray(e))
-					return e.map(function (y) {
-						return new t.Token(
-							t.utils.asString(y).toLowerCase(),
-							t.utils.clone(n)
-						);
-					});
+					return e.map(
+						(y) =>
+							new t.Token(
+								t.utils.asString(y).toLowerCase(),
+								t.utils.clone(n),
+							),
+					);
 				for (
 					var r = e.toString().toLowerCase(),
 						i = r.length,
@@ -227,7 +210,7 @@
 				(t.Pipeline.registerFunction = function (e, n) {
 					n in this.registeredFunctions &&
 						t.utils.warn(
-							"Overwriting existing registered function: " + n
+							"Overwriting existing registered function: " + n,
 						),
 						(e.label = n),
 						(t.Pipeline.registeredFunctions[e.label] = e);
@@ -238,18 +221,18 @@
 						t.utils.warn(
 							`Function is not registered with pipeline. This may cause problems when serialising the index.
 `,
-							e
+							e,
 						);
 				}),
-				(t.Pipeline.load = function (e) {
+				(t.Pipeline.load = (e) => {
 					var n = new t.Pipeline();
 					return (
-						e.forEach(function (r) {
+						e.forEach((r) => {
 							var i = t.Pipeline.registeredFunctions[r];
 							if (i) n.add(i);
 							else
 								throw new Error(
-									"Cannot load unregistered function: " + r
+									"Cannot load unregistered function: " + r,
 								);
 						}),
 						n
@@ -298,19 +281,17 @@
 				}),
 				(t.Pipeline.prototype.runString = function (e, n) {
 					var r = new t.Token(e, n);
-					return this.run([r]).map(function (i) {
-						return i.toString();
-					});
+					return this.run([r]).map((i) => i.toString());
 				}),
 				(t.Pipeline.prototype.reset = function () {
 					this._stack = [];
 				}),
 				(t.Pipeline.prototype.toJSON = function () {
-					return this._stack.map(function (e) {
-						return (
+					return this._stack.map(
+						(e) => (
 							t.Pipeline.warnIfFunctionNotRegistered(e), e.label
-						);
-					});
+						),
+					);
 				});
 			(t.Vector = function (e) {
 				(this._magnitude = 0), (this.elements = e || []);
@@ -324,7 +305,6 @@
 							s = Math.floor(i / 2),
 							o = this.elements[s * 2];
 						i > 1 && (o < e && (n = s), o > e && (r = s), o != e);
-
 					)
 						(i = r - n),
 							(s = n + Math.floor(i / 2)),
@@ -333,7 +313,7 @@
 					if (o < e) return (s + 1) * 2;
 				}),
 				(t.Vector.prototype.insert = function (e, n) {
-					this.upsert(e, n, function () {
+					this.upsert(e, n, () => {
 						throw "duplicate index";
 					});
 				}),
@@ -368,7 +348,6 @@
 							u = 0,
 							d = 0;
 						u < s && d < o;
-
 					)
 						(a = r[u]),
 							(l = i[d]),
@@ -399,7 +378,7 @@
 				(t.Vector.prototype.toJSON = function () {
 					return this.elements;
 				});
-			(t.stemmer = (function () {
+			(t.stemmer = (() => {
 				var e = {
 						ational: "ate",
 						tional: "tion",
@@ -450,7 +429,7 @@
 					S = /^(.+?)(ed|ing)$/,
 					w = /.$/,
 					k = /(at|bl|iz)$/,
-					_ = new RegExp("([^aeiouylsz])\\1$"),
+					_ = /([^aeiouylsz])\1$/,
 					B = new RegExp("^" + s + i + "[^aeiouwxy]$"),
 					A = /^(.+?[^aeiou])y$/,
 					j =
@@ -462,7 +441,7 @@
 					C = /^(.+?)e$/,
 					z = /ll$/,
 					W = new RegExp("^" + s + i + "[^aeiouwxy]$"),
-					N = function (c) {
+					N = (c) => {
 						var v, P, T, h, x, O, M;
 						if (c.length < 3) return c;
 						if (
@@ -540,16 +519,12 @@
 							c
 						);
 					};
-				return function (R) {
-					return R.update(N);
-				};
+				return (R) => R.update(N);
 			})()),
 				t.Pipeline.registerFunction(t.stemmer, "stemmer");
-			(t.generateStopWordFilter = function (e) {
-				var n = e.reduce(function (r, i) {
-					return (r[i] = i), r;
-				}, {});
-				return function (r) {
+			(t.generateStopWordFilter = (e) => {
+				var n = e.reduce((r, i) => ((r[i] = i), r), {});
+				return (r) => {
 					if (r && n[r.toString()] !== r.toString()) return r;
 				};
 			}),
@@ -675,11 +650,8 @@
 					"your",
 				])),
 				t.Pipeline.registerFunction(t.stopWordFilter, "stopWordFilter");
-			(t.trimmer = function (e) {
-				return e.update(function (n) {
-					return n.replace(/^\W+/, "").replace(/\W+$/, "");
-				});
-			}),
+			(t.trimmer = (e) =>
+				e.update((n) => n.replace(/^\W+/, "").replace(/\W+$/, ""))),
 				t.Pipeline.registerFunction(t.trimmer, "trimmer");
 			(t.TokenSet = function () {
 				(this.final = !1),
@@ -688,7 +660,7 @@
 					(t.TokenSet._nextId += 1);
 			}),
 				(t.TokenSet._nextId = 1),
-				(t.TokenSet.fromArray = function (e) {
+				(t.TokenSet.fromArray = (e) => {
 					for (
 						var n = new t.TokenSet.Builder(), r = 0, i = e.length;
 						r < i;
@@ -697,17 +669,15 @@
 						n.insert(e[r]);
 					return n.finish(), n.root;
 				}),
-				(t.TokenSet.fromClause = function (e) {
-					return "editDistance" in e
+				(t.TokenSet.fromClause = (e) =>
+					"editDistance" in e
 						? t.TokenSet.fromFuzzyString(e.term, e.editDistance)
-						: t.TokenSet.fromString(e.term);
-				}),
-				(t.TokenSet.fromFuzzyString = function (e, n) {
+						: t.TokenSet.fromString(e.term)),
+				(t.TokenSet.fromFuzzyString = (e, n) => {
 					for (
 						var r = new t.TokenSet(),
 							i = [{ node: r, editsRemaining: n, str: e }];
 						i.length;
-
 					) {
 						var s = i.pop();
 						if (s.str.length > 0) {
@@ -778,7 +748,7 @@
 					}
 					return r;
 				}),
-				(t.TokenSet.fromString = function (e) {
+				(t.TokenSet.fromString = (e) => {
 					for (
 						var n = new t.TokenSet(), r = n, i = 0, s = e.length;
 						i < s;
@@ -798,7 +768,6 @@
 					for (
 						var e = [], n = [{ prefix: "", node: this }];
 						n.length;
-
 					) {
 						var r = n.pop(),
 							i = Object.keys(r.node.edges),
@@ -836,7 +805,6 @@
 							r = void 0,
 							i = [{ qNode: e, output: n, node: this }];
 						i.length;
-
 					) {
 						r = i.pop();
 						for (
@@ -932,7 +900,7 @@
 					(this.pipeline = e.pipeline);
 			}),
 				(t.Index.prototype.search = function (e) {
-					return this.query(function (n) {
+					return this.query((n) => {
 						var r = new t.QueryParser(e, n);
 						r.parse();
 					});
@@ -1006,9 +974,7 @@
 										(i[m].upsert(
 											_,
 											u.boost,
-											function (Qe, Ie) {
-												return Qe + Ie;
-											}
+											(Qe, Ie) => Qe + Ie,
 										),
 										!s[j])
 									) {
@@ -1021,7 +987,7 @@
 												? (r[C] = new t.MatchData(
 														w,
 														m,
-														z
+														z,
 													))
 												: W.add(w, m, z);
 										}
@@ -1070,9 +1036,7 @@
 							}
 						}
 					}
-					return v.sort(function (Te, ke) {
-						return ke.score - Te.score;
-					});
+					return v.sort((Te, ke) => ke.score - Te.score);
 				}),
 				(t.Index.prototype.toJSON = function () {
 					var e = Object.keys(this.invertedIndex)
@@ -1091,7 +1055,7 @@
 						pipeline: this.pipeline.toJSON(),
 					};
 				}),
-				(t.Index.load = function (e) {
+				(t.Index.load = (e) => {
 					var n = {},
 						r = {},
 						i = e.fieldVectors,
@@ -1105,7 +1069,7 @@
 								t.version +
 								"' does not match serialized index '" +
 								e.version +
-								"'"
+								"'",
 						);
 					for (var u = 0; u < i.length; u++) {
 						var d = i[u],
@@ -1151,7 +1115,7 @@
 				(t.Builder.prototype.field = function (e, n) {
 					if (/\//.test(e))
 						throw new RangeError(
-							"Field '" + e + "' contains illegal character '/'"
+							"Field '" + e + "' contains illegal character '/'",
 						);
 					this._fields[e] = n || {};
 				}),
@@ -1272,7 +1236,7 @@
 							i[f] === void 0
 								? ((w = t.idf(
 										this.invertedIndex[f],
-										this.documentCount
+										this.documentCount,
 									)),
 									(i[f] = w))
 								: (w = i[f]),
@@ -1298,7 +1262,7 @@
 				}),
 				(t.Builder.prototype.createTokenSet = function () {
 					this.tokenSet = t.TokenSet.fromArray(
-						Object.keys(this.invertedIndex).sort()
+						Object.keys(this.invertedIndex).sort(),
 					);
 				}),
 				(t.Builder.prototype.build = function () {
@@ -1507,15 +1471,13 @@
 				(t.QueryLexer.EDIT_DISTANCE = "EDIT_DISTANCE"),
 				(t.QueryLexer.BOOST = "BOOST"),
 				(t.QueryLexer.PRESENCE = "PRESENCE"),
-				(t.QueryLexer.lexField = function (e) {
-					return (
-						e.backup(),
-						e.emit(t.QueryLexer.FIELD),
-						e.ignore(),
-						t.QueryLexer.lexText
-					);
-				}),
-				(t.QueryLexer.lexTerm = function (e) {
+				(t.QueryLexer.lexField = (e) => (
+					e.backup(),
+					e.emit(t.QueryLexer.FIELD),
+					e.ignore(),
+					t.QueryLexer.lexText
+				)),
+				(t.QueryLexer.lexTerm = (e) => {
 					if (
 						(e.width() > 1 &&
 							(e.backup(), e.emit(t.QueryLexer.TERM)),
@@ -1524,27 +1486,23 @@
 					)
 						return t.QueryLexer.lexText;
 				}),
-				(t.QueryLexer.lexEditDistance = function (e) {
-					return (
-						e.ignore(),
-						e.acceptDigitRun(),
-						e.emit(t.QueryLexer.EDIT_DISTANCE),
-						t.QueryLexer.lexText
-					);
-				}),
-				(t.QueryLexer.lexBoost = function (e) {
-					return (
-						e.ignore(),
-						e.acceptDigitRun(),
-						e.emit(t.QueryLexer.BOOST),
-						t.QueryLexer.lexText
-					);
-				}),
-				(t.QueryLexer.lexEOS = function (e) {
+				(t.QueryLexer.lexEditDistance = (e) => (
+					e.ignore(),
+					e.acceptDigitRun(),
+					e.emit(t.QueryLexer.EDIT_DISTANCE),
+					t.QueryLexer.lexText
+				)),
+				(t.QueryLexer.lexBoost = (e) => (
+					e.ignore(),
+					e.acceptDigitRun(),
+					e.emit(t.QueryLexer.BOOST),
+					t.QueryLexer.lexText
+				)),
+				(t.QueryLexer.lexEOS = (e) => {
 					e.width() > 0 && e.emit(t.QueryLexer.TERM);
 				}),
 				(t.QueryLexer.termSeparator = t.tokenizer.separator),
-				(t.QueryLexer.lexText = function (e) {
+				(t.QueryLexer.lexText = (e) => {
 					for (;;) {
 						var n = e.next();
 						if (n == t.QueryLexer.EOS) return t.QueryLexer.lexEOS;
@@ -1599,7 +1557,7 @@
 					var e = this.currentClause;
 					this.query.clause(e), (this.currentClause = {});
 				}),
-				(t.QueryParser.parseClause = function (e) {
+				(t.QueryParser.parseClause = (e) => {
 					var n = e.peekLexeme();
 					if (n != null)
 						switch (n.type) {
@@ -1620,7 +1578,7 @@
 								);
 						}
 				}),
-				(t.QueryParser.parsePresence = function (e) {
+				(t.QueryParser.parsePresence = (e) => {
 					var n = e.consumeLexeme();
 					if (n != null) {
 						switch (n.str) {
@@ -1658,14 +1616,12 @@
 						}
 					}
 				}),
-				(t.QueryParser.parseField = function (e) {
+				(t.QueryParser.parseField = (e) => {
 					var n = e.consumeLexeme();
 					if (n != null) {
 						if (e.query.allFields.indexOf(n.str) == -1) {
 							var r = e.query.allFields
-									.map(function (o) {
-										return "'" + o + "'";
-									})
+									.map((o) => "'" + o + "'")
 									.join(", "),
 								i =
 									"unrecognised field '" +
@@ -1690,7 +1646,7 @@
 						}
 					}
 				}),
-				(t.QueryParser.parseTerm = function (e) {
+				(t.QueryParser.parseTerm = (e) => {
 					var n = e.consumeLexeme();
 					if (n != null) {
 						(e.currentClause.term = n.str.toLowerCase()),
@@ -1721,10 +1677,10 @@
 						}
 					}
 				}),
-				(t.QueryParser.parseEditDistance = function (e) {
+				(t.QueryParser.parseEditDistance = (e) => {
 					var n = e.consumeLexeme();
 					if (n != null) {
-						var r = parseInt(n.str, 10);
+						var r = Number.parseInt(n.str, 10);
 						if (isNaN(r)) {
 							var i = "edit distance must be numeric";
 							throw new t.QueryParseError(i, n.start, n.end);
@@ -1755,10 +1711,10 @@
 						}
 					}
 				}),
-				(t.QueryParser.parseBoost = function (e) {
+				(t.QueryParser.parseBoost = (e) => {
 					var n = e.consumeLexeme();
 					if (n != null) {
-						var r = parseInt(n.str, 10);
+						var r = Number.parseInt(n.str, 10);
 						if (isNaN(r)) {
 							var i = "boost must be numeric";
 							throw new t.QueryParseError(i, n.start, n.end);
@@ -1789,15 +1745,13 @@
 						}
 					}
 				}),
-				(function (e, n) {
+				((e, n) => {
 					typeof define == "function" && define.amd
 						? define(n)
 						: typeof se == "object"
 							? (oe.exports = n())
 							: (e.lunr = n());
-				})(this, function () {
-					return t;
-				});
+				})(this, () => t);
 		})();
 	});
 	var re = [];
@@ -1811,7 +1765,7 @@
 				this.ensureFocusedElementVisible(),
 				this.listenForCodeCopies(),
 				window.addEventListener("hashchange", () =>
-					this.ensureFocusedElementVisible()
+					this.ensureFocusedElementVisible(),
 				),
 				document.body.style.display ||
 					(this.ensureFocusedElementVisible(),
@@ -1841,7 +1795,7 @@
 		scrollToHash() {
 			if (location.hash) {
 				console.log("Scorlling");
-				let e = document.getElementById(location.hash.substring(1));
+				const e = document.getElementById(location.hash.substring(1));
 				if (!e) return;
 				e.scrollIntoView({ behavior: "instant", block: "start" });
 			}
@@ -1849,24 +1803,24 @@
 		ensureActivePageVisible() {
 			let e = document.querySelector(".tsd-navigation .current"),
 				n = e?.parentElement;
-			for (; n && !n.classList.contains(".tsd-navigation"); )
+			while (n && !n.classList.contains(".tsd-navigation"))
 				n instanceof HTMLDetailsElement && (n.open = !0),
 					(n = n.parentElement);
 			if (e && !e.checkVisibility()) {
-				let r =
+				const r =
 					e.getBoundingClientRect().top -
 					document.documentElement.clientHeight / 4;
 				document.querySelector(".site-menu").scrollTop = r;
 			}
 		}
 		updateIndexVisibility() {
-			let e = document.querySelector(".tsd-index-content"),
+			const e = document.querySelector(".tsd-index-content"),
 				n = e?.open;
 			e && (e.open = !0),
 				document.querySelectorAll(".tsd-index-section").forEach((r) => {
 					r.style.display = "block";
-					let i = Array.from(
-						r.querySelectorAll(".tsd-index-link")
+					const i = Array.from(
+						r.querySelectorAll(".tsd-index-link"),
 					).every((s) => s.offsetParent == null);
 					r.style.display = i ? "none" : "block";
 				}),
@@ -1876,21 +1830,21 @@
 			if (
 				(this.alwaysVisibleMember &&
 					(this.alwaysVisibleMember.classList.remove(
-						"always-visible"
+						"always-visible",
 					),
 					this.alwaysVisibleMember.firstElementChild.remove(),
 					(this.alwaysVisibleMember = null)),
 				!location.hash)
 			)
 				return;
-			let e = document.getElementById(location.hash.substring(1));
+			const e = document.getElementById(location.hash.substring(1));
 			if (!e) return;
 			let n = e.parentElement;
-			for (; n && n.tagName !== "SECTION"; ) n = n.parentElement;
+			while (n && n.tagName !== "SECTION") n = n.parentElement;
 			if (n && n.offsetParent == null) {
 				(this.alwaysVisibleMember = n),
 					n.classList.add("always-visible");
-				let r = document.createElement("p");
+				const r = document.createElement("p");
 				r.classList.add("warning"),
 					(r.textContent =
 						"This member is normally hidden due to your filter settings."),
@@ -1903,7 +1857,7 @@
 				e.addEventListener("click", () => {
 					e.previousElementSibling instanceof HTMLElement &&
 						navigator.clipboard.writeText(
-							e.previousElementSibling.innerText.trim()
+							e.previousElementSibling.innerText.trim(),
 						),
 						(e.textContent = "Copied!"),
 						e.classList.add("visible"),
@@ -1927,7 +1881,7 @@
 	var de = De(ae());
 	async function le(t, e) {
 		if (!window.searchData) return;
-		let n = await fetch(window.searchData),
+		const n = await fetch(window.searchData),
 			r = new Blob([await n.arrayBuffer()])
 				.stream()
 				.pipeThrough(new DecompressionStream("gzip")),
@@ -1938,9 +1892,9 @@
 			e.classList.add("ready");
 	}
 	function he() {
-		let t = document.getElementById("tsd-search");
+		const t = document.getElementById("tsd-search");
 		if (!t) return;
-		let e = { base: t.dataset.base + "/" },
+		const e = { base: t.dataset.base + "/" },
 			n = document.getElementById("tsd-search-script");
 		t.classList.add("loading"),
 			n &&
@@ -1951,11 +1905,11 @@
 					le(e, t);
 				}),
 				le(e, t));
-		let r = document.querySelector("#tsd-search input"),
+		const r = document.querySelector("#tsd-search input"),
 			i = document.querySelector("#tsd-search .results");
 		if (!r || !i)
 			throw new Error(
-				"The input field or the result list wrapper was not found"
+				"The input field or the result list wrapper was not found",
 			);
 		let s = !1;
 		i.addEventListener("mousedown", () => (s = !0)),
@@ -1973,7 +1927,7 @@
 			"input",
 			ie(() => {
 				Ve(t, e, n, r);
-			}, 200)
+			}, 200),
 		);
 		let i = !1;
 		n.addEventListener("keydown", (s) => {
@@ -2006,7 +1960,7 @@
 		let i = n.value.trim(),
 			s;
 		if (i) {
-			let o = i
+			const o = i
 				.split(" ")
 				.map((a) => (a.length ? `*${a}*` : ""))
 				.join(" ");
@@ -2021,9 +1975,9 @@
 				(a.score *= u);
 		}
 		if (s.length === 0) {
-			let o = document.createElement("li");
+			const o = document.createElement("li");
 			o.classList.add("no-results");
-			let a = document.createElement("span");
+			const a = document.createElement("span");
 			(a.textContent = "No results found"),
 				o.appendChild(a),
 				e.appendChild(o);
@@ -2038,9 +1992,9 @@
 				l.parent &&
 					(d = `<span class="parent">
                 ${ce(l.parent, i)}.</span>${d}`);
-			let y = document.createElement("li");
+			const y = document.createElement("li");
 			y.classList.value = l.classes ?? "";
-			let p = document.createElement("a");
+			const p = document.createElement("a");
 			(p.href = r.base + l.url),
 				(p.innerHTML = u + d),
 				y.append(p),
@@ -2049,10 +2003,7 @@
 	}
 	function ue(t, e) {
 		let n = t.querySelector(".current");
-		if (!n)
-			(n = t.querySelector(e == 1 ? "li:first-child" : "li:last-child")),
-				n && n.classList.add("current");
-		else {
+		if (n) {
 			let r = n;
 			if (e === 1)
 				do r = r.nextElementSibling ?? void 0;
@@ -2061,12 +2012,14 @@
 				do r = r.previousElementSibling ?? void 0;
 				while (r instanceof HTMLElement && r.offsetParent == null);
 			r && (n.classList.remove("current"), r.classList.add("current"));
-		}
+		} else
+			(n = t.querySelector(e == 1 ? "li:first-child" : "li:last-child")),
+				n && n.classList.add("current");
 	}
 	function Ne(t, e) {
 		let n = t.querySelector(".current");
 		if ((n || (n = t.querySelector("li:first-child")), n)) {
-			let r = n.querySelector("a");
+			const r = n.querySelector("a");
 			r && (window.location.href = r.href), e.blur();
 		}
 	}
@@ -2077,10 +2030,10 @@
 			i = [],
 			s = 0,
 			o = n.indexOf(r);
-		for (; o != -1; )
+		while (o != -1)
 			i.push(
 				K(t.substring(s, o)),
-				`<b>${K(t.substring(o, o + r.length))}</b>`
+				`<b>${K(t.substring(o, o + r.length))}</b>`,
 			),
 				(s = o + r.length),
 				(o = n.indexOf(r, s));
@@ -2111,7 +2064,7 @@
 		D = !1,
 		me =
 			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-				navigator.userAgent
+				navigator.userAgent,
 			);
 	document.documentElement.classList.add(me ? "is-mobile" : "not-mobile");
 	me &&
@@ -2119,12 +2072,12 @@
 		((Be = !0), (F = "touchstart"), (fe = "touchmove"), (H = "touchend"));
 	document.addEventListener(F, (t) => {
 		(ee = !0), (D = !1);
-		let e = F == "touchstart" ? t.targetTouches[0] : t;
+		const e = F == "touchstart" ? t.targetTouches[0] : t;
 		(J.y = e.pageY || 0), (J.x = e.pageX || 0);
 	});
 	document.addEventListener(fe, (t) => {
 		if (ee && !D) {
-			let e = F == "touchstart" ? t.targetTouches[0] : t,
+			const e = F == "touchstart" ? t.targetTouches[0] : t,
 				n = J.x - (e.pageX || 0),
 				r = J.y - (e.pageY || 0);
 			D = Math.sqrt(n * n + r * r) > 10;
@@ -2143,10 +2096,10 @@
 				this.el.addEventListener(H, (n) => this.onPointerUp(n)),
 				this.el.addEventListener("click", (n) => n.preventDefault()),
 				document.addEventListener(F, (n) =>
-					this.onDocumentPointerDown(n)
+					this.onDocumentPointerDown(n),
 				),
 				document.addEventListener(H, (n) =>
-					this.onDocumentPointerUp(n)
+					this.onDocumentPointerUp(n),
 				);
 		}
 		setActive(e) {
@@ -2154,14 +2107,14 @@
 			(this.active = e),
 				document.documentElement.classList.toggle(
 					"has-" + this.className,
-					e
+					e,
 				),
 				this.el.classList.toggle("active", e);
-			let n = (this.active ? "to-has-" : "from-has-") + this.className;
+			const n = (this.active ? "to-has-" : "from-has-") + this.className;
 			document.documentElement.classList.add(n),
 				setTimeout(
 					() => document.documentElement.classList.remove(n),
-					500
+					500,
 				);
 		}
 		onPointerUp(e) {
@@ -2175,7 +2128,7 @@
 		}
 		onDocumentPointerUp(e) {
 			if (!D && this.active && e.target.closest(".col-sidebar")) {
-				let n = e.target.closest("a");
+				const n = e.target.closest("a");
 				if (n) {
 					let r = window.location.href;
 					r.indexOf("#") != -1 &&
@@ -2214,7 +2167,7 @@
 				this.app.updateIndexVisibility();
 		}
 		fromLocalStorage() {
-			let e = Q.getItem(this.key);
+			const e = Q.getItem(this.key);
 			return e ? e === "true" : this.el.checked;
 		}
 		setLocalStorage(e) {
@@ -2233,14 +2186,20 @@
 		constructor(e) {
 			super(e),
 				(this.summary = this.el.querySelector(
-					".tsd-accordion-summary"
+					".tsd-accordion-summary",
 				)),
 				(this.icon = this.summary.querySelector("svg")),
-				(this.key = `tsd-accordion-${this.summary.dataset.key ?? this.summary.textContent.trim().replace(/\s+/g, "-").toLowerCase()}`);
-			let n = Q.getItem(this.key);
+				(this.key = `tsd-accordion-${
+					this.summary.dataset.key ??
+					this.summary.textContent
+						.trim()
+						.replace(/\s+/g, "-")
+						.toLowerCase()
+				}`);
+			const n = Q.getItem(this.key);
 			(this.el.open = n ? n === "true" : this.el.open),
 				this.el.addEventListener("toggle", () => this.update());
-			let r = this.summary.querySelector("a");
+			const r = this.summary.querySelector("a");
 			r &&
 				r.addEventListener("click", () => {
 					location.assign(r.href);
@@ -2248,12 +2207,14 @@
 				this.update();
 		}
 		update() {
-			(this.icon.style.transform = `rotate(${this.el.open ? 0 : -90}deg)`),
+			(this.icon.style.transform = `rotate(${
+				this.el.open ? 0 : -90
+			}deg)`),
 				Q.setItem(this.key, this.el.open.toString());
 		}
 	};
 	function ge(t) {
-		let e = Q.getItem("tsd-theme") || "os";
+		const e = Q.getItem("tsd-theme") || "os";
 		(t.value = e),
 			ve(e),
 			t.addEventListener("change", () => {
@@ -2265,47 +2226,47 @@
 	}
 	var Le;
 	function be() {
-		let t = document.getElementById("tsd-nav-script");
+		const t = document.getElementById("tsd-nav-script");
 		t && (t.addEventListener("load", xe), xe());
 	}
 	async function xe() {
-		let t = document.getElementById("tsd-nav-container");
+		const t = document.getElementById("tsd-nav-container");
 		if (!t || !window.navigationData) return;
-		let n = await (await fetch(window.navigationData)).arrayBuffer(),
+		const n = await (await fetch(window.navigationData)).arrayBuffer(),
 			r = new Blob([n])
 				.stream()
 				.pipeThrough(new DecompressionStream("gzip")),
 			i = await new Response(r).json();
 		(Le = t.dataset.base + "/"), (t.innerHTML = "");
-		for (let s of i) we(s, t, []);
+		for (const s of i) we(s, t, []);
 		window.app.createComponents(t),
 			window.app.showPage(),
 			window.app.ensureActivePageVisible();
 	}
 	function we(t, e, n) {
-		let r = e.appendChild(document.createElement("li"));
+		const r = e.appendChild(document.createElement("li"));
 		if (t.children) {
-			let i = [...n, t.text],
+			const i = [...n, t.text],
 				s = r.appendChild(document.createElement("details"));
 			(s.className = t.class
 				? `${t.class} tsd-index-accordion`
 				: "tsd-index-accordion"),
 				(s.dataset.key = i.join("$"));
-			let o = s.appendChild(document.createElement("summary"));
+			const o = s.appendChild(document.createElement("summary"));
 			(o.className = "tsd-accordion-summary"),
 				(o.innerHTML =
 					'<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>'),
 				Ee(t, o);
-			let a = s.appendChild(document.createElement("div"));
+			const a = s.appendChild(document.createElement("div"));
 			a.className = "tsd-accordion-details";
-			let l = a.appendChild(document.createElement("ul"));
+			const l = a.appendChild(document.createElement("ul"));
 			l.className = "tsd-nested-navigation";
-			for (let u of t.children) we(u, l, i);
+			for (const u of t.children) we(u, l, i);
 		} else Ee(t, r, t.class);
 	}
 	function Ee(t, e, n) {
 		if (t.path) {
-			let r = e.appendChild(document.createElement("a"));
+			const r = e.appendChild(document.createElement("a"));
 			(r.href = Le + t.path),
 				n && (r.className = n),
 				location.pathname === r.pathname && r.classList.add("current"),

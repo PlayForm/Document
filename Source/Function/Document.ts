@@ -4,9 +4,9 @@
  */
 export default (async (...[File]: Parameters<Interface>) => {
 	for (const _File of File) {
-		for (const __File of await (
-			await import("fast-glob")
-		).default(_File.replaceAll("'", "").replaceAll('"', ""))) {
+		for (const __File of await (await import("fast-glob")).default(
+			_File.replaceAll("'", "").replaceAll('"', ""),
+		)) {
 			Pipe.push(__File);
 		}
 	}
@@ -20,7 +20,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 			// "--gitRemote Source",
 			"--commentStyle all",
 			`--customCss ${(await import("path")).resolve(
-				`${Current}/../../Stylesheet/Theme.css`
+				`${Current}/../../Stylesheet/Theme.css`,
 			)}`,
 			"--includeVersion",
 			"--out ./Documentation",
@@ -46,7 +46,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 			"--mergeModulesRenameDefaults",
 			"--mergeModulesMergeMode module",
 			`--entryPoints ${Pipe.join(" --entryPoints ")}`,
-		].join(" ")
+		].join(" "),
 	);
 }) satisfies Interface as Interface;
 
@@ -59,5 +59,5 @@ export const { resolve } = await import("path");
 export const Pipe: string[] = [];
 
 export const Current = (await import("url")).fileURLToPath(
-	(await import("path")).dirname(import.meta.url)
+	(await import("path")).dirname(import.meta.url),
 );
