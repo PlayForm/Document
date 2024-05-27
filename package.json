@@ -44,13 +44,8 @@
 		"typedoc-plugin-rename-defaults": "0.7.0",
 		"typedoc-plugin-zod": "1.1.2"
 	},
-	"peerDependencies": {
+	"devDependencies": {
 		"@playform/build": "0.0.9"
-	},
-	"peerDependenciesMeta": {
-		"@playform/build": {
-			"optional": true
-		}
 	},
 	"publishConfig": {
 		"access": "public"
