@@ -1,6 +1,6 @@
 {
 	"name": "@playform/document",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"private": false,
 	"description": "📃 Document —",
 	"keywords": [
@@ -31,7 +31,6 @@
 		"Document": "Target/Class/Document.js"
 	},
 	"scripts": {
-		"Document": "node ./Target/Class/Document.js 'Source/**/*.ts'",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
@@ -44,9 +43,6 @@
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.0",
 		"typedoc-plugin-zod": "1.1.2"
-	},
-	"devDependencies": {
-		"ts-node": "10.9.2"
 	},
 	"peerDependencies": {
 		"@playform/build": "0.0.9"

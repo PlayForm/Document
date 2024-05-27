@@ -19,11 +19,7 @@ export default interface Interface {
 	 */
 	(
 		Command: string,
-		Echo?:
-			| false
-			// biome-ignore lint/suspicious/noExplicitAny:
-			| ((Return: any, _Error?: boolean) => Promise<void>)
-			// biome-ignore lint/suspicious/noExplicitAny:
-			| ((Return: any, _Error?: boolean) => void),
+		// biome-ignore lint/suspicious/noExplicitAny:
+		Echo?: false | ((Return: any, _Error?: boolean) => Promise<void>),
 	): Promise<void>;
 }
