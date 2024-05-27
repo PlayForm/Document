@@ -13,40 +13,49 @@ export default (async (...[File]: Parameters<Interface>) => {
 
 	Pipe.reverse();
 
-	Exec(
-		[
-			"typedoc",
-			// TODO: FIX THIS
-			// "--gitRemote Source",
-			"--commentStyle all",
-			`--customCss ${(await import("path")).resolve(
-				`${Current}/../../Stylesheet/Theme.css`,
-			)}`,
-			"--includeVersion",
-			"--out ./Documentation",
-			// TODO: FIX THIS
-			// `--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
-			"--plugin typedoc-plugin-remove-references",
-			"--plugin typedoc-plugin-rename-defaults",
-			"--plugin typedoc-plugin-mdn-links",
-			"--plugin typedoc-plugin-zod",
-			"--plugin typedoc-plugin-merge-modules",
-			"--plugin typedoc-plugin-keywords",
-			"--searchInComments",
-			`--keywords ${
-				(
-					await (
-						await import("@Function/JSON.js")
-					).default("package.json", process.cwd())
-				)?.keywords?.join(" --keywords ") ?? " @playform/document "
-			}`,
-			// TODO: FIX THIS
-			// "--theme Document",
-			"--entryPointStrategy expand",
-			"--mergeModulesRenameDefaults",
-			"--mergeModulesMergeMode module",
-			`--entryPoints ${Pipe.join(" --entryPoints ")}`,
-		].join(" "),
+	await Exec(
+		"git branch --show-current",
+		async (Branch, _Error) =>
+			await Exec(
+				`git config --get branch.${Branch}.remote`,
+				async (Remote, _Error) =>
+					await Exec(
+						[
+							"typedoc",
+							// TODO: FIX THIS
+							`--gitRemote ${_Error ? "origin" : Remote}`,
+							"--commentStyle all",
+							`--customCss ${(await import("path")).resolve(
+								`${Current}/../../Stylesheet/Theme.css`,
+							)}`,
+							"--includeVersion",
+							"--out ./Documentation",
+							// TODO: FIX THIS
+							// `--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
+							"--plugin typedoc-plugin-remove-references",
+							"--plugin typedoc-plugin-rename-defaults",
+							"--plugin typedoc-plugin-mdn-links",
+							"--plugin typedoc-plugin-zod",
+							"--plugin typedoc-plugin-merge-modules",
+							"--plugin typedoc-plugin-keywords",
+							"--searchInComments",
+							`--keywords ${
+								(
+									await (
+										await import("@Function/JSON.js")
+									).default("package.json", process.cwd())
+								)?.keywords?.join(" --keywords ") ??
+								" @playform/document "
+							}`,
+							// TODO: FIX THIS
+							// "--theme Document",
+							"--entryPointStrategy expand",
+							"--mergeModulesRenameDefaults",
+							"--mergeModulesMergeMode module",
+							`--entryPoints ${Pipe.join(" --entryPoints ")}`,
+						].join(" "),
+					),
+			),
 	);
 }) satisfies Interface as Interface;
 
