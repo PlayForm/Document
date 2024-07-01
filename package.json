@@ -38,7 +38,7 @@
 		"fast-glob": "3.3.2",
 		"typedoc": "0.26.3",
 		"typedoc-plugin-keywords": "1.6.0",
-		"typedoc-plugin-mdn-links": "3.2.1",
+		"typedoc-plugin-mdn-links": "3.2.2",
 		"typedoc-plugin-merge-modules": "5.1.0",
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.1",
