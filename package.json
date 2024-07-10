@@ -31,12 +31,13 @@
 		"Document": "Target/Class/Document.js"
 	},
 	"scripts": {
+		"Run": "Build 'Source/**/*.ts' -W",
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
 		"commander": "12.1.0",
 		"fast-glob": "3.3.2",
-		"typedoc": "0.26.3",
+		"typedoc": "0.26.4",
 		"typedoc-plugin-keywords": "1.6.0",
 		"typedoc-plugin-mdn-links": "3.2.3",
 		"typedoc-plugin-merge-modules": "6.0.0",
