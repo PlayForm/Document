@@ -2,7 +2,7 @@
  * @module Load
  *
  */
-export declare const load: (Application: import("typedoc").Application) => void;
+export declare const load: (Application: import("typedoc").Application) => any;
 declare const _default: Interface;
 export default _default;
 import type Interface from "../Interface/Load.js";
