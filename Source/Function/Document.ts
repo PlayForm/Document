@@ -22,7 +22,6 @@ export default (async (...[File]: Parameters<Interface>) => {
 					await Exec(
 						[
 							"typedoc",
-							// TODO: FIX THIS
 							`--gitRemote ${_Error ? "origin" : Remote}`,
 							"--commentStyle all",
 							`--customCss ${(await import("path")).resolve(
