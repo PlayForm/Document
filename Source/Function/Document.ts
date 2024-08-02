@@ -29,7 +29,6 @@ export default (async (...[File]: Parameters<Interface>) => {
 							)}`,
 							"--includeVersion",
 							"--out ./Documentation",
-							// TODO: FIX THIS
 							// `--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 							"--plugin typedoc-plugin-remove-references",
 							"--plugin typedoc-plugin-rename-defaults",
@@ -46,7 +45,6 @@ export default (async (...[File]: Parameters<Interface>) => {
 								)?.keywords?.join(" --keywords ") ??
 								" @playform/document "
 							}`,
-							// TODO: FIX THIS
 							// "--theme Document",
 							"--entryPointStrategy expand",
 							"--mergeModulesRenameDefaults",

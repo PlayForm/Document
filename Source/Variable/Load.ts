@@ -1,14 +1,21 @@
-/**
- * @module Load
- *
- */
-export const load = (...[Application]: Parameters<Interface["load"]>) =>
-	Application.renderer.defineTheme("Document", Theme);
+// /**
+//  * @module Load
+//  *
+//  */
+// export const load = (...[Application]: Parameters<Interface["load"]>) => {
+// 	// Application.renderer.addTheme("Document", {
+// 	// 	preRender: {
+// 	// 		"rename": (context) => {
+// 	// 			context.router.createSlug(new FunctionReflection("Function"));
+// 	// 		},
+// 	// 	},
+// 	// });
+// };
 
-export default {
-	load,
-} satisfies Interface as Interface;
+// export default {
+// 	load,
+// } satisfies Interface as Interface;
 
-import type Interface from "../Interface/Load.js";
+// import type Interface from "../Interface/Load.js";
 
-export const { default: Theme } = await import("@Class/Theme.js");
+// export const { FunctionReflection } = await import("typedoc");
