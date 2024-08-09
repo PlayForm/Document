@@ -14,12 +14,6 @@ import type {
 } from "typedoc";
 
 export default class extends DefaultTheme {
-	/**
-	 * Return the template mapping for the given reflection.
-	 *
-	 * @param reflection  The reflection whose mapping should be resolved.
-	 * @returns           The found mapping or undefined if no mapping could be found.
-	 */
 
 	/**
 	 * Build the url for the the given reflection and all of its children.
