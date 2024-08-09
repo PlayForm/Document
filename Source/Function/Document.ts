@@ -28,15 +28,15 @@ export default (async (...[File]: Parameters<Interface>) => {
 								`${Current}/../../Stylesheet/Theme.css`,
 							)}`,
 							"--includeVersion",
-							`--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 							"--out ./Documentation",
+							`--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 							"--plugin typedoc-plugin-remove-references",
 							"--plugin typedoc-plugin-rename-defaults",
 							"--plugin typedoc-plugin-mdn-links",
 							"--plugin typedoc-plugin-zod",
 							"--plugin typedoc-plugin-merge-modules",
 							"--plugin typedoc-plugin-keywords",
-							"--theme Document",
+							// "--theme Document",
 							"--searchInComments",
 							`--keywords ${
 								(
