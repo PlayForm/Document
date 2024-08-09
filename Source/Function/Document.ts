@@ -28,6 +28,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 								`${Current}/../../Stylesheet/Theme.css`,
 							)}`,
 							"--includeVersion",
+							`--plugin ${resolve(`${Current}/../../Target/Variable/Load.js`)}`,
 							"--out ./Documentation",
 							"--plugin typedoc-plugin-remove-references",
 							"--plugin typedoc-plugin-rename-defaults",
@@ -35,6 +36,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 							"--plugin typedoc-plugin-zod",
 							"--plugin typedoc-plugin-merge-modules",
 							"--plugin typedoc-plugin-keywords",
+							"--theme Document",
 							"--searchInComments",
 							`--keywords ${
 								(
@@ -44,6 +46,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 								)?.keywords?.join(" --keywords ") ??
 								" @playform/document "
 							}`,
+
 							"--entryPointStrategy expand",
 							"--mergeModulesRenameDefaults",
 							"--mergeModulesMergeMode module",
