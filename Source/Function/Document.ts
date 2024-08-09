@@ -36,7 +36,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 							"--plugin typedoc-plugin-zod",
 							"--plugin typedoc-plugin-merge-modules",
 							"--plugin typedoc-plugin-keywords",
-							// "--theme Document",
+							"--theme Document",
 							"--searchInComments",
 							`--keywords ${
 								(

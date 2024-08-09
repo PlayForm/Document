@@ -1,3 +1,5 @@
-export const { default: DefaultTheme } = await import("typedoc");
+import { DefaultTheme } from "typedoc";
 
-export default class extends DefaultTheme {}
+export default class extends DefaultTheme {
+	
+}
