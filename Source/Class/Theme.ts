@@ -14,7 +14,6 @@ import type {
 } from "typedoc";
 
 export default class extends DefaultTheme {
-
 	/**
 	 * Build the url for the the given reflection and all of its children.
 	 *
