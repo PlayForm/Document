@@ -14,16 +14,13 @@ import type {
 } from "typedoc";
 
 export default class extends DefaultTheme {
-	/**
-	 * Build the url for the the given reflection and all of its children.
-	 *
-	 * @param Reflection  The reflection the url should be created for.
-	 * @param URL        The array the url should be appended to.
-	 * @returns           The altered urls array.
-	 */
+	override getRenderContext(pageEvent: PageEvent<Reflection>) {
+		return new Context(this, pageEvent, this.application.options);
+	}
+
 	public override buildUrls(
 		Reflection: DeclarationReflection | DocumentReflection,
-		URL: UrlMapping[],
+		URLs: UrlMapping[],
 	): UrlMapping[] {
 		const Mapping = this._Mapping(Reflection);
 
@@ -39,7 +36,7 @@ export default class extends DefaultTheme {
 					`${DefaultTheme.getUrl(Reflection)}.html`,
 				].join("/");
 
-				URL.push(new UrlMapping(_URL, Reflection, Mapping.template));
+				URLs.push(new UrlMapping(_URL, Reflection, Mapping.template));
 
 				this._Slug.set(Reflection, new Slugger());
 
@@ -52,7 +49,7 @@ export default class extends DefaultTheme {
 					Reflection_Child.isDeclaration() ||
 					Reflection_Child.isDocument()
 				) {
-					this.buildUrls(Reflection_Child, URL);
+					this.buildUrls(Reflection_Child, URLs);
 				} else {
 					DefaultTheme.applyAnchorUrl(Reflection_Child, Reflection);
 				}
@@ -63,7 +60,7 @@ export default class extends DefaultTheme {
 			DefaultTheme.applyAnchorUrl(Reflection, Reflection.parent);
 		}
 
-		return URL;
+		return URLs;
 	}
 
 	_Mapping = (
@@ -74,9 +71,6 @@ export default class extends DefaultTheme {
 
 	_Slug = new Map<Reflection, Slugger>();
 
-	/**
-	 * Mappings of reflections kinds to templates used by this theme.
-	 */
 	private Mapping: TemplateMapping[] = [
 		{
 			kind: [ReflectionKind.Class],
@@ -121,26 +115,13 @@ export default class extends DefaultTheme {
 	];
 }
 
-/**
- * Defines a mapping of a {@link Models.Kind} to a template file.
- *
- * Used by {@link DefaultTheme} to map reflections to output files.
- */
 interface TemplateMapping {
-	/**
-	 * {@link DeclarationReflection.kind} this rule applies to.
-	 */
 	kind: ReflectionKind[];
 
-	/**
-	 * The name of the directory the output files should be written to.
-	 */
 	directory: string;
-
-	/**
-	 * The name of the template that should be used to render the reflection.
-	 */
 
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	template: RenderTemplate<PageEvent<any>>;
 }
+
+export const { default: Context } = await import("@Class/Theme/Context.js");
