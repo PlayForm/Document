@@ -4,9 +4,9 @@
  */
 export default (async (...[File]: Parameters<Interface>) => {
 	for (const _File of File) {
-		for (const __File of await (
-			await import("fast-glob")
-		).default(_File.replaceAll("'", "").replaceAll('"', ""))) {
+		for (const __File of await (await import("fast-glob")).default(
+			_File.replaceAll("'", "").replaceAll('"', ""),
+		)) {
 			Pipe.push(__File);
 		}
 	}

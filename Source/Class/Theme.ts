@@ -3,14 +3,14 @@
  *
  */
 
-import { DefaultTheme, UrlMapping, Slugger, ReflectionKind } from "typedoc";
+import { DefaultTheme, ReflectionKind, Slugger, UrlMapping } from "typedoc";
 
 import type {
 	DeclarationReflection,
 	DocumentReflection,
+	PageEvent,
 	Reflection,
 	RenderTemplate,
-	PageEvent,
 } from "typedoc";
 
 export default class extends DefaultTheme {
