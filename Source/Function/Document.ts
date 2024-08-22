@@ -4,9 +4,9 @@
  */
 export default (async (...[File]: Parameters<Interface>) => {
 	for (const _File of File) {
-		for (const __File of await (await import("fast-glob")).default(
-			_File.replaceAll("'", "").replaceAll('"', ""),
-		)) {
+		for (const __File of await (
+			await import("fast-glob")
+		).default(_File.replaceAll("'", "").replaceAll('"', ""))) {
 			Pipe.push(__File);
 		}
 	}
@@ -15,13 +15,14 @@ export default (async (...[File]: Parameters<Interface>) => {
 
 	await Exec(
 		"git branch --show-current",
-		async (Branch, _Error) =>
+		async (Branch, __Error) =>
 			await Exec(
 				`git config --get branch.${Branch}.remote`,
 				async (Remote, _Error) =>
 					await Exec(
 						[
 							"typedoc",
+							`--gitRevision ${__Error ? "main" : Branch}`,
 							`--gitRemote ${_Error ? "origin" : Remote}`,
 							"--commentStyle all",
 							`--customCss ${(await import("path")).resolve(
@@ -46,7 +47,6 @@ export default (async (...[File]: Parameters<Interface>) => {
 								)?.keywords?.join(" --keywords ") ??
 								" @playform/document "
 							}`,
-
 							"--entryPointStrategy expand",
 							"--mergeModulesRenameDefaults",
 							"--mergeModulesMergeMode module",
