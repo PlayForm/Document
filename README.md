@@ -2,7 +2,7 @@
 
 Document all your TypeScript files using TypeDoc.
 
-## Installation
+## 🚀 Installation
 
 Add configuration and setup scripts:
 
@@ -10,7 +10,7 @@ Add configuration and setup scripts:
 npm install -D -E @playform/document
 ```
 
-## Usage
+## 🛠️ Usage
 
 `package.json`
 
