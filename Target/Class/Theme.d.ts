@@ -2,7 +2,7 @@
  * @module Theme
  *
  */
-import { DefaultTheme, ReflectionKind, UrlMapping } from "typedoc";
+import { DefaultTheme, ReflectionKind, Slugger, UrlMapping } from "typedoc";
 import type { DeclarationReflection, DocumentReflection, PageEvent, Reflection, RenderTemplate } from "typedoc";
 export default class extends DefaultTheme {
     getRenderContext(pageEvent: PageEvent<Reflection>): import("@Class/Theme/Context.js").default;
