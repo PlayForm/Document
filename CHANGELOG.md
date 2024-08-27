@@ -1,53 +1,110 @@
 ## 0.1.1
 
+### Changed
+
+-   Updated `typedoc` to version 0.26.6
+-   Updated `typedoc-plugin-mdn-links` to version 3.2.10
+-   Updated `typedoc-plugin-zod` to version 1.2.1
+-   Updated `@playform/build` to version 0.1.3
+
 ## 0.1.0
 
--   Cleanup
+### Added
+
+-   Added `Run` script to package.json
+-   Added `provenance` field to package.json
+
+### Changed
+
+-   Updated dependencies
+-   Updated code to resolve TODOs
 
 ## 0.0.12
 
--   Cleanup
+### Added
+
+-   Added CLI usage instructions to README.md
+
+### Changed
+
+-   Updated dependencies
+-   Minor code changes
 
 ## 0.0.11
 
--   Cleanup
+### Changed
+
+-   Updated dependencies
 
 ## 0.0.10
 
--   Cleanup
+### Changed
+
+-   Moved `@playform/build` from `peerDependencies` to `devDependencies`
 
 ## 0.0.9
 
--   Cleanup
+### Changed
+
+-   Removed `Document` script from package.json
+-   Updated dependencies
 
 ## 0.0.8
 
--   Cleanup
+### Changed
+
+-   Improved logic for determining git remote
+-   Updated error handling in `Exec` function
 
 ## 0.0.7
 
--   Cleanup
+### Changed
+
+-   Updated package description, keywords, homepage, and repository URLs
+-   Updated dependencies
+-   Moved `@playform/build` to `peerDependencies`
 
 ## 0.0.6
 
--   Cleanup
+### Added
+
+-   Added `Document` script to package.json
+
+### Changed
+
+-   Updated `@playform/build` dependency
 
 ## 0.0.5
 
--   Cleanup
+### Changed
+
+-   Updated code to use dynamic path resolution for `--customCss` option
 
 ## 0.0.4
 
--   Cleanup
+### Changed
+
+-   Updated `@playform/build` dependency
+-   Removed `Document` script from package.json
 
 ## 0.0.3
 
--   Cleanup
+### Changed
+
+-   Renamed `TypeScriptDocument` to `Document`
+-   Updated package description and keywords
+-   Updated dependencies
+-   Removed ESBuild configuration files
+-   Updated README.md
 
 ## 0.0.2
 
--   Cleanup
+### Changed
+
+-   Updated `Document` script in package.json
 
 ## 0.0.1
 
--   Initial version
+### Added
+
+-   Initial release
