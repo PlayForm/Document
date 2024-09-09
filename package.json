@@ -37,16 +37,16 @@
 	"dependencies": {
 		"commander": "12.1.0",
 		"fast-glob": "3.3.2",
-		"typedoc": "0.26.6",
+		"typedoc": "0.26.7",
 		"typedoc-plugin-keywords": "1.6.0",
-		"typedoc-plugin-mdn-links": "3.2.11",
+		"typedoc-plugin-mdn-links": "3.2.12",
 		"typedoc-plugin-merge-modules": "6.0.0",
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.1",
 		"typedoc-plugin-zod": "1.2.1"
 	},
 	"devDependencies": {
-		"@playform/build": "0.1.4"
+		"@playform/build": "0.1.6"
 	},
 	"publishConfig": {
 		"access": "public",
