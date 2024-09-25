@@ -1,8 +1,10 @@
+import type Interface from "../Interface/Document.js";
+
 /**
  * @module Document
  *
  */
-export default (async (...[File]: Parameters<Interface>) => {
+export default (async (...[File, Option]: Parameters<Interface>) => {
 	for (const _File of File) {
 		for (const __File of await (
 			await import("fast-glob")
@@ -21,7 +23,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 				async (Remote, _Error) =>
 					await Exec(
 						[
-							"playform-typedoc",
+							"typedoc",
 							`--gitRevision ${__Error ? "main" : Branch}`,
 							`--gitRemote ${_Error ? "origin" : Remote}`,
 							"--commentStyle all",
@@ -29,7 +31,7 @@ export default (async (...[File]: Parameters<Interface>) => {
 								`${Current}/../../Stylesheet/Theme.css`,
 							)}`,
 							"--includeVersion",
-							"--out ./Documentation",
+							`--out ./${Option?.Folder && Option.Folder.trim() !== "" ? Option.Folder : "Documentation"}`,
 							"--plugin typedoc-plugin-remove-references",
 							"--plugin typedoc-plugin-rename-defaults",
 							"--plugin typedoc-plugin-mdn-links",
@@ -54,8 +56,6 @@ export default (async (...[File]: Parameters<Interface>) => {
 			),
 	);
 }) satisfies Interface as Interface;
-
-import type Interface from "../Interface/Document.js";
 
 export const { default: Exec } = await import("@Function/Exec.js");
 

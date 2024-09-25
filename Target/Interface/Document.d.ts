@@ -1,3 +1,4 @@
+import type { Pattern } from "fast-glob";
 /**
  * @module Document
  *
@@ -8,7 +9,10 @@ export default interface Interface {
      *
      * @param File - An array of file patterns to be processed. Each pattern can include wildcards (*) to match multiple files.
      *
+     * @param Option.Folder - A string representing the Folder option.
+     *
      */
-    (File: Pattern[]): Promise<void>;
+    (File: Pattern[], Option?: {
+        Folder?: string;
+    }): Promise<void>;
 }
-import type { Pattern } from "fast-glob";
