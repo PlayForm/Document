@@ -1,5 +1,14 @@
 ## 0.1.2
 
+### Changed
+
+-   Renamed Documentation folder to docs
+-   Updated `typedoc` to version 0.26.7
+-   Updated `typedoc-plugin-mdn-links` to version 3.3.1
+-   Updated `typedoc-plugin-merge-modules` to version 6.0.1
+-   Updated `@playform/build` to version 0.1.6
+-   Added option to specify output folder for documentation
+
 ## 0.1.1
 
 ### Changed
