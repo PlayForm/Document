@@ -1,6 +1,6 @@
 {
 	"name": "@playform/document",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"private": false,
 	"description": "Document 📃",
 	"keywords": [
@@ -46,7 +46,7 @@
 		"typedoc-plugin-zod": "1.4.0"
 	},
 	"devDependencies": {
-		"@playform/build": "0.2.1"
+		"@playform/build": "0.2.2"
 	},
 	"publishConfig": {
 		"access": "public",
