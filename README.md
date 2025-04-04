@@ -10,7 +10,7 @@ Add configuration and setup scripts:
 npm install -D -E @playform/document
 ```
 
-## 🛠️ Usage
+## Usage 🛠️
 
 `package.json`
 

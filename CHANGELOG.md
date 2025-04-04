@@ -1,5 +1,20 @@
 ## 0.1.5
 
+### Changed
+
+- Updated version in `package.json` to 0.1.5.
+- Updated `commander` to version 13.1.0.
+- Updated `typedoc` to version 0.28.1.
+- Updated `typedoc-plugin-mdn-links` to version 5.0.1.
+- Updated `typedoc-plugin-merge-modules` to version 7.0.0.
+- Updated `typedoc-plugin-rename-defaults` to version 0.7.3.
+- Updated `typedoc-plugin-zod` to version 1.4.0.
+- Updated `@playform/build` to version 0.2.2.
+- Adjusted emoji placement in CLI command descriptions and names for
+  consistency.
+- Migrated core module imports to use `node:` protocol (`path` → `node:path`,
+  `url` → `node:url`, `fs/promises` → `node:fs/promises`).
+
 ## 0.1.4
 
 ### Add
