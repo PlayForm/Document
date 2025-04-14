@@ -43,7 +43,7 @@
 		"typedoc-plugin-merge-modules": "7.0.0",
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.3",
-		"typedoc-plugin-zod": "1.4.0"
+		"typedoc-plugin-zod": "1.4.1"
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.3"
