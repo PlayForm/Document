@@ -25,9 +25,9 @@
 
 - Updated version in `package.json` to 0.1.4.
 - Updated contact email in `package.json` from Source/Open@PlayForm.Cloud to
-  Source/Open@PlayForm.LTD.
+  Source/Open@PlayForm.Cloud.
 - Updated URL in `package.json` from HTTPS://PlayForm.Cloud to
-  HTTPS://PlayForm.LTD.
+  HTTPS://PlayForm.Cloud.
 - Updated `commander` to version 13.0.0.
 - Updated `fast-glob` to version 3.3.3.
 - Updated `typedoc` to version 0.27.6.
@@ -44,9 +44,9 @@
 
 - Updated version in `package.json` to 0.1.3.
 - Updated contact email in `package.json` from `Source/Open@PlayForm.Cloud` to
-  `Source/Open@PlayForm.LTD`.
+  `Source/Open@PlayForm.Cloud`.
 - Updated URL in `package.json` from `HTTPS://PlayForm.Cloud` to
-  `HTTPS://PlayForm.LTD`.
+  `HTTPS://PlayForm.Cloud`.
 - Updated `typedoc` to version 0.26.11.
 - Updated `typedoc-plugin-mdn-links` to version 3.3.8.
 - Updated `typedoc-plugin-merge-modules` to version 6.0.3.
