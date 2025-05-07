@@ -1,8 +1,19 @@
 ## 0.1.6
 
+### Change
+
+- Updated version in `package.json` to 0.1.6.
+- Updated contact email in `package.json` from `Source/Open@PlayForm.LTD` to
+  `Source/Open@PlayForm.Cloud`.
+- Updated URL in `package.json` from `HTTPS://PlayForm.LTD` to
+  `HTTPS://PlayForm.Cloud`.
+- Updated `typedoc` to version 0.28.4.
+- Updated `typedoc-plugin-zod` to version 1.4.1.
+- Updated `@playform/build` to version 0.2.4.
+
 ## 0.1.5
 
-### Changed
+### Change
 
 - Updated version in `package.json` to 0.1.5.
 - Updated `commander` to version 13.1.0.
