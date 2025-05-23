@@ -6,9 +6,9 @@ import type Interface from "../Interface/Document.js";
  */
 export default (async (...[File, Option]) => {
 	for (const _File of File) {
-		for (const __File of await (
-			await import("fast-glob")
-		).default(_File.replaceAll("'", "").replaceAll('"', ""))) {
+		for (const __File of await (await import("fast-glob")).default(
+			_File.replaceAll("'", "").replaceAll('"', ""),
+		)) {
 			Pipe.push(__File);
 		}
 	}
