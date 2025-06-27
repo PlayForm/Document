@@ -37,7 +37,7 @@
 	"dependencies": {
 		"commander": "14.0.0",
 		"fast-glob": "3.3.3",
-		"typedoc": "0.28.5",
+		"typedoc": "0.28.6",
 		"typedoc-plugin-keywords": "1.6.0",
 		"typedoc-plugin-mdn-links": "5.0.2",
 		"typedoc-plugin-merge-modules": "7.0.0",
