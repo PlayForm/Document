@@ -35,7 +35,7 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"commander": "14.0.1",
+		"commander": "14.0.2",
 		"fast-glob": "3.3.3",
 		"typedoc": "0.28.14",
 		"typedoc-plugin-keywords": "1.6.0",
