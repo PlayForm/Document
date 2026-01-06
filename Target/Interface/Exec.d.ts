@@ -1,21 +1,37 @@
 /**
  * @module Exec
- *
+ * Interface for command execution functionality
+ * @since 0.1.0
  */
 export default interface Interface {
     /**
-     * The 'Exec' function is an asynchronous function that executes a command and logs the
-     * stdout and stderr of the child process.
+     * Asynchronously executes a command and handles stdout/stderr output.
+     * This function spawns a child process to execute the given command and provides
+     * flexible output handling through the Echo parameter.
      *
-     * @param Command - The 'Command' parameter is a string that represents the
-     * command you want to execute. It can be any valid command that can be executed in a
-     * terminal or command prompt.
+     * @param Command - The command string to execute in the terminal or command prompt.
+     * Can be any valid shell command including pipes, redirects, and command chaining.
      *
-     * @param Echo - An optional parameter that controls whether the stdout and stderr
-     * of the child process should be logged. If set to 'false', no logging will occur. If set
-     * to a function, the function will be called with the stdout and stderr data as a parameter for custom
-     * logging. If not provided, stdout and stderr will be logged to the console by default.
+     * @param Echo - Optional parameter controlling output handling:
+     * - `false`: Suppresses all stdout/stderr output
+     * - Function: Custom handler called with output data and error flag
+     * - `undefined`: Default console logging of stdout/stderr
      *
+     * @returns Promise<void> - Resolves when command execution completes
+     * @throws {Error} If command execution fails or process exits with non-zero code
+     *
+     * @example
+     * // Execute command with default logging
+     * await exec('ls -la');
+     *
+     * // Execute command with custom output handling
+     * await exec('git status', (output, isError) => {
+     *   if (isError) console.error('Error:', output);
+     *   else console.log('Output:', output);
+     * });
+     *
+     * // Execute command silently
+     * await exec('npm install', false);
      */
     (Command: string, Echo?: false | ((Return: any, _Error?: boolean) => Promise<void>)): Promise<void>;
 }
