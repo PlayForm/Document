@@ -1,3 +1,24 @@
+## 0.1.7
+
+### Change
+
+- Updated version in `package.json` to 0.1.7.
+- Normalized HTTPS URLs in `package.json` to lowercase scheme (`HTTPS://` →
+  `https://`).
+- Updated `commander` to version 14.0.2.
+- Updated `typedoc` to version 0.28.15.
+- Updated `typedoc-plugin-mdn-links` to version 5.0.10.
+- Updated `typedoc-plugin-zod` to version 1.4.3.
+- Updated `@playform/build` to version 0.2.6.
+- Enhanced CLI command interface documentation and added `@since` tags across
+  modules.
+- Improved Typedoc plugin resolution by explicitly referencing dist files
+  instead of relying on binary paths.
+- Added extensive Typedoc configuration options for better control over
+  documentation output formatting and behavior.
+- Expanded JSDoc comments with detailed descriptions, examples, and parameter
+  documentation for exported functions and interfaces.
+
 ## 0.1.6
 
 ### Change
