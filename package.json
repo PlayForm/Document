@@ -35,18 +35,18 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"commander": "14.0.2",
+		"commander": "14.0.3",
 		"fast-glob": "3.3.3",
 		"typedoc": "0.28.16",
 		"typedoc-plugin-keywords": "1.6.0",
-		"typedoc-plugin-mdn-links": "5.1.0",
+		"typedoc-plugin-mdn-links": "5.1.1",
 		"typedoc-plugin-merge-modules": "7.0.0",
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.3",
 		"typedoc-plugin-zod": "1.4.3"
 	},
 	"devDependencies": {
-		"@playform/build": "0.2.6"
+		"@playform/build": "0.3.0"
 	},
 	"publishConfig": {
 		"access": "public",
