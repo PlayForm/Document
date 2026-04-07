@@ -1,3 +1,15 @@
+## 0.1.8
+
+### Change
+
+- Updated homepage URL in `package.json` from `#readme` anchor to
+  `?tab=readme-ov-file`
+- Updated dependencies:
+    - Bump `commander` from 14.0.2 to 14.0.3
+    - Bump `typedoc` from 0.28.15 to 0.28.18
+    - Bump `typedoc-plugin-mdn-links` from 5.0.10 to 5.1.1
+    - Bump `@playform/build` from 0.2.6 to 0.3.1
+
 ## 0.1.7
 
 ### Change
