@@ -37,7 +37,7 @@
 	"dependencies": {
 		"commander": "15.0.0",
 		"fast-glob": "3.3.3",
-		"typedoc": "0.28.19",
+		"typedoc": "0.28.20",
 		"typedoc-plugin-keywords": "1.6.0",
 		"typedoc-plugin-mdn-links": "5.1.1",
 		"typedoc-plugin-merge-modules": "7.0.0",
@@ -47,7 +47,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.3.2",
-		"@types/node": "25.9.2"
+		"@types/node": "26.1.1"
 	},
 	"publishConfig": {
 		"access": "public",
