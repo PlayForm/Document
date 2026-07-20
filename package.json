@@ -46,7 +46,7 @@
 		"typedoc-plugin-zod": "1.4.3"
 	},
 	"devDependencies": {
-		"@playform/build": "0.3.2",
+		"@playform/build": "0.3.3",
 		"@types/node": "26.1.1"
 	},
 	"publishConfig": {
