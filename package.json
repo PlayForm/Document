@@ -44,11 +44,11 @@
 		"typedoc-plugin-remove-references": "0.0.6",
 		"typedoc-plugin-rename-defaults": "0.7.3",
 		"typedoc-plugin-zod": "1.4.3",
-		"typescript": "6.0.3"
+		"typescript": "7.0.2"
 	},
 	"devDependencies": {
-		"@playform/build": "0.3.3",
-		"@types/node": "26.1.2"
+		"@playform/build": "0.3.4",
+		"@types/node": "26.4.1"
 	},
 	"publishConfig": {
 		"access": "public",
